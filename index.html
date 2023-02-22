@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerador de Senhas</title>
+  <!-- Adicione o Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+
+  <style>
+    body {
+      background-color: #f5f5f5;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .center-align {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m8 offset-m2">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title center-align font-bold text-large font-montserrat">Gerador de Senhas</span>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 m6">
+                    <input id="passwordLength" type="number" min="6" max="50" class="validate" value="12">
+                    <label for="passwordLength">Comprimento da senha</label>
+                  </div>
+                  <div class="input-field col s12 m6">
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Fácil</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" />
+                        <span>Médio</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" />
+                        <span>Difícil</span>
+                      </label>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            
+            <div class="row">
+                <div class="col s12 center-align">
+                  <span id="passwordDisplay" class="green-text text-darken-2" style="font-size: 2rem;"></span>
+                </div>
+              </div>
+              
+              
+          </div>
+          <div class="card-action center-align">
+            <a class="waves-effect waves-light btn" id="generateButton">Gerar senha</a>
+            <a class="waves-effect waves-light btn" id="copyButton">Copiar senha</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Adicione o Materialize JS e o script do gerador de senhas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./geradorSenhas.js"></script>
+</body>
+</html>
