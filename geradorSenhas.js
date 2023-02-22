@@ -13,6 +13,9 @@ const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
+
+
+
 // Define a função que irá gerar a senha
 function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
   let password = "";
@@ -38,11 +41,11 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
     password += chars[randomIndex];
   }
 
-  return password;
+  return password
 }
 
 // Define a função que será executada ao clicar no botão "Gerar senha"
-generateButton.addEventListener("click", function() {
+generateButton.addEventListener("click", function () {
   const length = parseInt(passwordLengthInput.value);
   const includeLowercase = easyRadio.checked || mediumRadio.checked || hardRadio.checked;
   const includeUppercase = mediumRadio.checked || hardRadio.checked;
@@ -56,18 +59,20 @@ generateButton.addEventListener("click", function() {
 });
 
 // Define a função que será executada ao clicar no botão "Copiar senha"
-copyButton.addEventListener("click", function() {
-  const length = parseInt(passwordLengthInput.value);
-  const includeLowercase = easyRadio.checked || mediumRadio.checked || hardRadio.checked;
-  const includeUppercase = mediumRadio.checked || hardRadio.checked;
-  const includeNumbers = mediumRadio.checked || hardRadio.checked;
-  const includeSymbols = hardRadio.checked;
+copyButton.addEventListener('click', function () {
+  // Seleciona o elemento que exibe a senha gerada
+  // const passwordDisplay = document.querySelector('#password-display');
+  // Verifica se a senha foi gerada
+  const password = passwordDisplay.innerText.length < 1 ? null : passwordDisplay.innerText;
 
-  // Gera a senha e copia para a área de transferência
-  const password = generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
-  navigator.clipboard.writeText(password).then(function() {
-    alert("Senha copiada para a área de transferência: " + password);
-  }, function() {
-    alert("Não foi possível copiar a senha para a área de transferência.");
-  });
+  // Copia a senha para a área de transferência
+  if (password) {
+    navigator.clipboard.writeText(password).then(() => {
+      alert(`Senha copiada para a área de transferência: ${password}`);
+    }, () => {
+      alert('Não foi possível copiar a senha para a área de transferência.');
+    });
+  } else {
+    alert('Clique em gerar senha');
+  }
 });
