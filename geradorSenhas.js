@@ -13,9 +13,6 @@ const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
 
-
-
-
 // Define a função que irá gerar a senha
 function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
   let password = "";
