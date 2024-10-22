@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="./src/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    
   </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <title>Password Generator</title>
 
 </head>
@@ -35,16 +39,24 @@
       <input type="checkbox" name="Space" id="inputSpaces">
       <label for="inputSpaces">Spaces</label>
     </div>
-    <div><input type="number" name="PasswordLength" id="inLenght" value="10">Password Lenght</div>
+    <!-- <div><input type="number" name="PasswordLength" id="inLenght" value="10">Password Lenght</div> -->
+
+    <div>
+      <label for="PasswordLenghtNumber">Password Lenght</label>
+      <input type="number" name="" id="PasswordLenghtNumber" max="32">
+    </div>
 
   </section>
   <section>
-    <button type="button">Generate</button>
+    <button id="btnGenerate" type="button">Generate</button>
   </section>
-  <Section>
-    <div>
-      <p>Password</p>
-      <button type="button">Copy</button>
+  <Section >
+    <div >
+      <div class="passwordGenerated">
+        <p>Password</p>
+        <button type="button">Copy</button>
+
+      </div>
       <h2>Adfas!@##$%ˆ</h1>
     </div>
   </Section>

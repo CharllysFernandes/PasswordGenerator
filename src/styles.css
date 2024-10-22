@@ -2,7 +2,7 @@
     --color-background: #e6ecf3;
     --color-text-h1: #141415;
     --color-text-muted:#5c5d5d;
-    --color-button:#0737d8;
+    --color-button:rgb(37, 104, 232);
     --color1:#a2a9b2;
     --color2:#6e9ae5;
     --color3:#0737d8;
@@ -30,6 +30,7 @@ section > div{
     margin: 0.3em;
     padding: 1em;
     width: 300px;
+    text-wrap: nowrap;
 }
 section > div > input{
     width: 1.3em;
@@ -45,4 +46,54 @@ section > div > label{
     cursor: pointer;
     /* margin-left: 8px; */
     padding-left: 8px;
+}
+
+#btnGenerate{
+    padding: .5em 2em .5em 2em;
+    margin: 0.5em 1em .5em 1em;
+    border: none;
+    background-color: var(--color5);
+    color: white;
+    font-size: 2em;
+
+}
+#btnGenerate:hover{
+    background: var(--color3);
+    cursor: pointer;
+}
+
+section > div > div > p{
+    margin: 0px;
+    padding: 0px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+section > div > div > button{
+    text-transform: uppercase;
+    border: none;
+    background: white;
+    color: var(--color-text-muted);
+
+}
+
+section > div > h2{
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: .1em;
+}
+
+.passwordGenerated{
+    display: flex;
+    /* width: 100%; */
+    /* height: 100%; */
+    align-items: center;
+    align-content: flex-start;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+section > div > button{
+    /* width: 200px; */
 }
