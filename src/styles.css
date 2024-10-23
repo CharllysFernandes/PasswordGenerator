@@ -29,7 +29,7 @@ section > div{
     background-color: white;
     margin: 0.3em;
     padding: 1em;
-    width: 300px;
+    width: 350px;
     text-wrap: nowrap;
 }
 section > div > input{
@@ -39,13 +39,25 @@ section > div > input{
     margin-right: 8px;
     cursor: pointer;
 }
-section > div > input[type="checkbox" i] {
-    
-}
+
 section > div > label{
     cursor: pointer;
     /* margin-left: 8px; */
     padding-left: 8px;
+}
+#PasswordLengthDiv{
+    display: flex;
+    width: 50%;
+
+}
+#PasswordLength{
+    text-align-last: center;
+    position: relative;
+    right: -10em;
+    border: none;
+    background: none;
+    width: 50%;
+
 }
 
 #btnGenerate{
@@ -68,13 +80,24 @@ section > div > div > p{
     color: var(--color-text-muted);
     text-transform: uppercase;
 }
-
+section > div > div > p {
+    font-size: .8em;
+    font-weight: 300;
+    
+}
 section > div > div > button{
+    font-size: .8em;
+    font-weight: 300;
     text-transform: uppercase;
     border: none;
     background: white;
     color: var(--color-text-muted);
+    cursor: pointer;
+}
 
+section > div > div > button:hover{
+    font-weight: bold;
+    color: var(--color-text-h1);
 }
 
 section > div > h2{
@@ -94,6 +117,3 @@ section > div > h2{
     flex-wrap: nowrap;
 }
 
-section > div > button{
-    /* width: 200px; */
-}

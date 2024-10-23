@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="./src/styles.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-    
   </style>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,15 +20,16 @@
   <section>
 
     <div>
-      <input type="checkbox" name="number" id="inputNumber">
+      <input type="checkbox" name="number" id="inputNumber" checked>
       <label for="inputNumber">Numbers</label>
     </div>
-    <div><input type="checkbox" name="LowerCase" id="inputLowerCase">
-      <label for="inputLowerCase">LowerCase</label>
+    <div>
+      <input type="checkbox" name="LowerCase" id="inputLowerCase" checked>
+      <label for="inputLowerCase">Lowercase</label>
     </div>
     <div>
-      <input type="checkbox" name="UpperCase" id="inputUpperCase">
-      <label for="inputUpperCase">UpperCase</label>
+      <input type="checkbox" name="UpperCase" id="inputUpperCase" checked>
+      <label for="inputUpperCase">Uppercase</label>
     </div>
     <div>
       <input type="checkbox" name="Symbols" id="inputSymbols">
@@ -39,28 +39,26 @@
       <input type="checkbox" name="Space" id="inputSpaces">
       <label for="inputSpaces">Spaces</label>
     </div>
-    <!-- <div><input type="number" name="PasswordLength" id="inLenght" value="10">Password Lenght</div> -->
 
-    <div>
-      <label for="PasswordLenghtNumber">Password Lenght</label>
-      <input type="number" name="" id="PasswordLenghtNumber" max="32">
+    <div id="PasswordLengthDiv">
+      <label for="PasswordLength">Password Length</label>
+      <input type="number" name="PasswordLength" id="PasswordLength" value="10">
     </div>
 
   </section>
   <section>
     <button id="btnGenerate" type="button">Generate</button>
   </section>
-  <Section >
-    <div >
+  <section>
+    <div>
       <div class="passwordGenerated">
         <p>Password</p>
-        <button type="button">Copy</button>
-
+        <button type="button" id="copyButton">Copy</button>
       </div>
-      <h2>Adfas!@##$%ˆ</h1>
+      <h2 id="passwordDisplay"></h2>
     </div>
-  </Section>
-
-  
+  </section>
+  <script src="./src/script.js"></script>
 </body>
+
 </html>

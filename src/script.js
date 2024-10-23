@@ -1,17 +1,14 @@
-const generateButton = document.getElementById("generateButton");
+const generateButton = document.getElementById("btnGenerate");
 const copyButton = document.getElementById("copyButton");
-const passwordLengthInput = document.getElementById("passwordLength");
-const easyRadio = document.getElementsByName("group1")[0];
-const mediumRadio = document.getElementsByName("group1")[1];
-const hardRadio = document.getElementsByName("group1")[2];
-const passwordDisplay = document.getElementById("passwordDisplay") // add by human
+const passwordLengthInput = document.getElementById("PasswordLength"); // Corrigido o id aqui
+const passwordDisplay = document.getElementById("passwordDisplay"); // Para exibir a senha gerada
 
 const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
 const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberChars = "0123456789";
-const symbolChars = "!@#$%^&*()_+~`|}{[]\:;?><,./-=";
+const symbolChars = "!@#$%^&*()_+~`|}{[]\\:;?><,./-=";
 
-function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols) {
+function generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols, includeSpaces) {
   let password = "";
   let chars = "";
 
@@ -27,25 +24,38 @@ function generatePassword(length, includeLowercase, includeUppercase, includeNum
   if (includeSymbols) {
     chars += symbolChars;
   }
+  if (includeSpaces) {
+    chars += " ";
+  }
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * chars.length);
     password += chars[randomIndex];
   }
+  
+  // Se espaços forem permitidos, mas não houver nenhum na senha, force a inclusão
+  if (includeSpaces && !password.includes(" ")) {
+    const randomPos = Math.floor(Math.random() * password.length);
+    password = password.substring(0, randomPos) + " " + password.substring(randomPos + 1);
+  }
 
-  return password
+
+  return password;
 }
 
 generateButton.addEventListener("click", function () {
   const length = parseInt(passwordLengthInput.value);
-  const includeLowercase = easyRadio.checked || mediumRadio.checked || hardRadio.checked;
-  const includeUppercase = mediumRadio.checked || hardRadio.checked;
-  const includeNumbers = mediumRadio.checked || hardRadio.checked;
-  const includeSymbols = hardRadio.checked;
 
-  const password = generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols);
+  // Pega os checkboxes
+  const includeLowercase = document.getElementById("inputLowerCase").checked;
+  const includeUppercase = document.getElementById("inputUpperCase").checked;
+  const includeNumbers = document.getElementById("inputNumber").checked;
+  const includeSymbols = document.getElementById("inputSymbols").checked;
+  const includeSpaces = document.getElementById("inputSpaces").checked;
+
+  const password = generatePassword(length, includeLowercase, includeUppercase, includeNumbers, includeSymbols, includeSpaces);
   console.log(password);
-  passwordDisplay.innerText = password
+  passwordDisplay.innerText = password;
 });
 
 copyButton.addEventListener('click', function () {
